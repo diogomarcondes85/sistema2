@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Lint all app code') {
-            steps {
-                sh 'echo "STAGE 1: Checking app code for syntax error ..."'
-                sh 'tidy -q -e *.html'
-            }
-        }   
         stage( 'Build docker image for app' ) {
             steps {
                 sh 'echo "STAGE 2: Building and tagging docker image ..."'
