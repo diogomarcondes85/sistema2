@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: sistem1
+data:
+  mapRoles: |  
+    - rolearn: arn:aws:iam::699094709586:role/eks-iam-role
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
